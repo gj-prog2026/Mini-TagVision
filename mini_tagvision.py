@@ -57,4 +57,9 @@ corners_px = project(corners)
 cv2.polylines(img, [np.round(corners_px).astype(np.int32)], 
               True, (255, 255, 255), 2)
 
+centre_line = np.array([(0, 1000, 0), (0, -1000, 0)])
+centre_line_px = project(centre_line)
+cv2.polylines(img, [np.round(centre_line_px).astype(np.int32)], 
+              True, (255, 255, 255), 2)
+
 cv2.imwrite("out/part1.png", img)
